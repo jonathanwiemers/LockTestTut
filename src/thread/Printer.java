@@ -24,6 +24,7 @@ public class Printer implements Runnable {
 					//dem anderen Thread bescheid sagen
 					this.lock.notify();
 				} catch (InterruptedException e) {
+					e.printStackTrace();
 					//wenn es eine Interrupt exception gibt, den Thread wieder laufen lassen.
 					// ->Thread.State.RUNNABLE
 					Thread.currentThread().interrupt();	
